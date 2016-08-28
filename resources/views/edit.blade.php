@@ -5,10 +5,11 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Create New Task</div>
+                <div class="panel-heading">Edit Task</div>
 
                 <div class="panel-body">
-                    <form action="{{ url('new') }}" method="POST" class="form-horizontal">
+                    {{!!Form::model($tasks)!!}}
+                    <form  action="{{ url('update,$task->id') }}" method="PATCH" class="form-horizontal">
                         {{ csrf_field() }}
 
                         <!-- Task title -->
@@ -92,6 +93,7 @@
                             </div>
                         </div>
                     </form>
+                    {{!!Form::close()}!!}
                 </div>
             </div>
         </div>

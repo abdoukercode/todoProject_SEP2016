@@ -17,8 +17,8 @@ class TasksTableSeeder extends Seeder
             'title' => 'long text test??',
             'body' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy',
             'owner_id'=> 7,
-            'completed'=>false,
-            'assign_to'=>'todoAdmin',
+            'priority'=>'medium-priority',
+            'assign_to'=>'todoadmin',
             'status'=> 'in-progress'
           ]);
     }   

@@ -26,7 +26,7 @@
                                 <section class="col-md-12 " >
                                     <article class="panel panel-default task-article">
                                         <div class="panel-title " >
-                                            {{$task->title}}
+                                            <a href="{{url('edit',$task->id)}}" >{{$task->title}}</a>
                                         </div>
                                         <div class="panel-body task-panel-body " >
                                             {{$task->body}}
@@ -48,7 +48,7 @@
                                             </div>
                                             <div class="edit-delete item" >
                                                <a href="#"><i class="fa fa-pencil fa-2x" aria-hidden="true" ></i></a>
-                                                <a href="#"><i (click)="onDelete()" class="fa fa-btn fa-trash fa-2x"></i></a>
+                                                <a href="{{url('/delete',$task->id)}}"><i (click)="onDelete()" class="fa fa-btn fa-trash fa-2x"></i></a>
                                             </div>
                                         </footer>
                                     </article>

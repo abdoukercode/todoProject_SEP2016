@@ -99,6 +99,15 @@ footer.panel-footer{
 div.panel-body.task-panel-body{
     padding:0 !important;
 }
+/*
+div.form-group.select-group{
+    display: flex;
+    justify-content: flex-start;
+}*/
+
+span.help-block{
+    color:red;
+}
   
 
  
