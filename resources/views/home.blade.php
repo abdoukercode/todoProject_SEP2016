@@ -14,7 +14,7 @@
                             <ul class="dash_ul">
                                 <li><a href="#"><i class="fa fa-check-square" aria-hidden="true"></i>Done</a></li>
                                 <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i>In-Progress</a></li>
-                                <li><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>New Task</a></li>
+                                <li><a href="{{url('/new')}}"><i class="fa fa-plus-circle" aria-hidden="true"></i>New Task</a></li>
                             </ul>
                         </div>
                          
@@ -23,26 +23,28 @@
                             <ul class ="list-group">
                             @foreach($tasks as $task)
                            
-                                <section class="col-md-12 ">
+                                <section class="col-md-12 " >
                                     <article class="panel panel-default task-article">
-                                        <div class="panel-title ">
+                                        <div class="panel-title " >
                                             {{$task->title}}
                                         </div>
-                                        <div class="panel-body">
+                                        <div class="panel-body task-panel-body " >
                                             {{$task->body}}
                                         </div>
                                         <footer class="panel-footer">
                                             <div class="owner item">
-                                                Owner: <span style="color:blue;font-weight:bold">{{ App\User::find($task->owner_id)->first()->name}}</span>
+                                                <span style="font-weight:bold">Owner</span>: <span style="color:blue;font-weight:bold">{{ App\User::find($task->owner_id)->name}}</span>
                                            </div>
                                             <div>
-                                                    Due-Date :{{$task->due_date}}
+                                                    <span style="font-weight: bold">Due-Date</span> : {{$task->due_date}}
                                             </div class="item">
                                             <div class="item">
-                                                    Status :{{$task->status}}
+                                                    <span style="font-weight: bold">Status</span> : {{$task->status}}
                                             </div >
                                             <div class="item">
-                                                    AssignedTo :{{$task->assign_to}}
+                                                    @if($task->assign_to !=null)
+                                                    <span style="font-weight: bold">AssignedTo</span> : {{$task->assign_to}}
+                                                    @endif
                                             </div>
                                             <div class="edit-delete item" >
                                                <a href="#"><i class="fa fa-pencil fa-2x" aria-hidden="true" ></i></a>

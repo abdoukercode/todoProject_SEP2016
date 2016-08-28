@@ -25,6 +25,10 @@ Route::get('regRequest','regRequestController@create');
 
 Route::post('regRequest','regRequestController@store');
 
+Route::get('new','HomeController@getNew');
+Route::post('new','HomeControllerController@postNew');
+
+
 
 Route::auth();
 

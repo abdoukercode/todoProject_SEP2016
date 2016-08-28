@@ -41,4 +41,11 @@ class HomeController extends Controller
 
         ]);
     }
+    public function getNew() {
+        return view('new');
+
+    }
+    public function postNew() {
+        
+    }
 }
