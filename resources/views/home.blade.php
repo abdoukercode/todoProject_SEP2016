@@ -32,10 +32,19 @@
                                             {{$task->body}}
                                         </div>
                                         <footer class="panel-footer">
-                                            <div class="owner">
-                                                {{$task->owner_id}}
+                                            <div class="owner item">
+                                                Owner: <span style="color:blue;font-weight:bold">{{ App\User::find($task->owner_id)->first()->name}}</span>
+                                           </div>
+                                            <div>
+                                                    Due-Date :{{$task->due_date}}
+                                            </div class="item">
+                                            <div class="item">
+                                                    Status :{{$task->status}}
+                                            </div >
+                                            <div class="item">
+                                                    AssignedTo :{{$task->assign_to}}
                                             </div>
-                                            <div class="edit-delete" >
+                                            <div class="edit-delete item" >
                                                <a href="#"><i class="fa fa-pencil fa-2x" aria-hidden="true" ></i></a>
                                                 <a href="#"><i (click)="onDelete()" class="fa fa-btn fa-trash fa-2x"></i></a>
                                             </div>

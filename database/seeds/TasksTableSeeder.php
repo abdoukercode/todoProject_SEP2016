@@ -14,10 +14,12 @@ class TasksTableSeeder extends Seeder
         DB::table('tasks')->insert(
          
           [
-            'title' => 'finish lorem test',
-            'body' => 'this is a test',
+            'title' => 'Where can I get some??',
+            'body' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy ',
             'owner_id'=> 2,
-            'completed'=>false
+            'completed'=>false,
+            'assign_to'=>'todoAdmin',
+            'status'=> 'in-progress'
           ]);
     }   
 }

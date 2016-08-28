@@ -10,7 +10,7 @@
     color:#3A2961;
     font-size: 20px;
 }
-.owner{
+/*.r{
     display: inline-block;
     font-style: italic;
     font-size: 12px;
@@ -23,7 +23,7 @@
 
     font-size: 12px;
     width: 19%;
-}
+}*/
 .cont {
   color: white;
   font-size: 15px;
@@ -90,3 +90,8 @@ ul.dash_ul{
     justify-content:flex-end;
 }
 
+footer.panel-footer{
+    font-size:10px;
+    display: flex;
+    justify-content: flex-start;
+}
