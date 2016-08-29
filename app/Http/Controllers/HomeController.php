@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 use Auth;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use App\Task;
 use App\User;
 use Redirect;
+use Illuminate\Support\Facades\Input;
 Use Validator;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -32,7 +35,10 @@ class HomeController extends Controller
         /*$user=User::all();*/
 
         
-         $tasks= $user->tasks;
+         /*$tasks= $user->tasks;*/
+         $tasks = Task::orderBy('created_at', 'desc')->where('owner_id', $user->id) ->get();
+         /*$tasks= $user->tasks;*/
+         
         /*$tasks =Task::all();*/
        /* dd($tasks);
         die();*/
@@ -90,10 +96,21 @@ class HomeController extends Controller
     }
 
     public function editTask($id){
-         $items = User::all(['id', 'name']);
-    return view('new', compact('items',$items));
-        $task= Task::find($id);
+        $items = User::all(['id', 'name']);
+      $task=Task::FindOrFail($id);
+    
+  
+    
+    return view('edit',[
+        'items'=>$items,
+        'task'=>$task]);
+    }
+    public function updateTask($id){
+         $task=Task::FindOrFail($id);
+         $task->fill(Input::all());
+         $task->save();
+         dd($task);
+        return redirect('home');
 
-        return view('edit', ['task'=>$task]);
     }
 }

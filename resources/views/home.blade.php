@@ -10,7 +10,7 @@
                 <div class="panel-body">
                    
                         {{-- <h3 class="title-tasks-page"> Welcome to  TodoList Application</h3> --}}
-                        <div class="alert alert-success" role="alert"><b class="dash">Dashboard</b>
+                        <div class="alert alert-success sub-heading" role="alert"><b class="dash">Dashboard</b>
                             <ul class="dash_ul">
                                 <li><a href="#"><i class="fa fa-check-square" aria-hidden="true"></i>Done</a></li>
                                 <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i>In-Progress</a></li>
@@ -19,14 +19,14 @@
                         </div>
                          
                         <div style="float:left;" >
-                            <h3 style="padding-top: 20px">Your Tasks</h3>
+                            <h3 style="padding-top: 20px" class="task-title">Your Tasks</h3>
                             <ul class ="list-group">
                             @foreach($tasks as $task)
                            
                                 <section class="col-md-12 " >
                                     <article class="panel panel-default task-article">
                                         <div class="panel-title " >
-                                            <a href="{{url('edit',$task->id)}}" >{{$task->title}}</a>
+                                            {{$task->title}}
                                         </div>
                                         <div class="panel-body task-panel-body " >
                                             {{$task->body}}
@@ -47,7 +47,7 @@
                                                     @endif
                                             </div>
                                             <div class="edit-delete item" >
-                                               <a href="#"><i class="fa fa-pencil fa-2x" aria-hidden="true" ></i></a>
+                                               <a href="{{url('edit',$task->id)}}" ><i class="fa fa-pencil fa-2x" aria-hidden="true" ></i></a>
                                                 <a href="{{url('/delete',$task->id)}}"><i (click)="onDelete()" class="fa fa-btn fa-trash fa-2x"></i></a>
                                             </div>
                                         </footer>

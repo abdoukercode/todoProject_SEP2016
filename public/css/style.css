@@ -1,9 +1,9 @@
 .panel-title{
     font-weight:bold;
     color:#3A2961;
-    font-size: 20px;
-    text-decoration:underline;
-    font-style: italic;
+    font-size: 18px;
+    
+    
 }
 .panel-heading{
     font-weight:bold;
@@ -83,7 +83,7 @@ article.task-article{
     border: 1px solid #cccccc;
     padding: O !important;
     border-radius: 4px;
-    box-shadow: 2px 4px 4px rgba(0,0,0,1);
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.5);
 }
 ul.dash_ul{
     display: flex;
@@ -107,6 +107,25 @@ div.form-group.select-group{
 
 span.help-block{
     color:red;
+}
+.alert.alert-success.sub-heading {
+    padding:0;
+    margin-bottom:0;
+    
+}
+.task-title {
+    margin-top: 5px;
+    margin-bottom:5px;
+    padding-bottom:0;
+    padding-top:0 !important;
+
+}
+ i.fa.fa-trash:hover, i.fa-pencil:hover{    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+     transform:scale(1.25);
+
 }
   
 

@@ -31,8 +31,8 @@ Route::post('regRequest','regRequestController@store');
 Route::get('new','HomeController@getNew');
 Route::post('new','HomeController@postNew');
 
-Route::get('edit/{item}/','HomeController@editTask');
-Route::patch('edit/{item}/{id}','HomeController@updateTask');
+Route::get('edit/{id}','HomeController@editTask');
+Route::patch('edit/{id}/','HomeController@updateTask');
 
 
 Route::get('delete/{item}/','HomeController@getDelete');
